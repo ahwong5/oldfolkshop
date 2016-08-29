@@ -30,6 +30,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'foundation-rails'
 # Use slim templating engine
 gem 'slim'
+# Use font-awesome icons
+gem 'font-awesome-sass', '~> 4.6.2'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 gem 'figaro'
