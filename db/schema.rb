@@ -10,9 +10,60 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20160829125824) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "categories", force: :cascade do |t|
+    t.string   "name"
+    t.string   "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "items", force: :cascade do |t|
+    t.string   "name"
+    t.float    "price"
+    t.string   "image"
+    t.string   "description"
+    t.integer  "inventory"
+    t.integer  "status",      default: 0
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+    t.integer  "category_id"
+  end
+
+  create_table "ordered_items", force: :cascade do |t|
+    t.integer  "quantity"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "order_id"
+    t.integer  "item_id"
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.float    "totalprice"
+    t.datetime "paiddatetime"
+    t.integer  "status",       default: 0
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.integer  "user_id"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string   "email"
+    t.string   "password_digest"
+    t.string   "firstname"
+    t.string   "lastname"
+    t.string   "image"
+    t.integer  "role",                 default: 0
+    t.string   "password_reset_token"
+    t.datetime "password_reset_at"
+    t.string   "address"
+    t.integer  "phone"
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
+  end
 
 end
