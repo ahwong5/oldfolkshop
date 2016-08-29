@@ -32,6 +32,8 @@ gem 'foundation-rails'
 gem 'slim'
 # Use font-awesome icons
 gem 'font-awesome-sass', '~> 4.6.2'
+# Use brcypt password hassing
+gem 'bcrypt'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 gem 'figaro'
