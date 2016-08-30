@@ -34,6 +34,9 @@ gem 'slim'
 gem 'font-awesome-sass', '~> 4.6.2'
 # Use brcypt password hassing
 gem 'bcrypt'
+# Gems for admin panel
+gem 'remotipart', github: 'mshibuya/remotipart'
+gem 'rails_admin', '>= 1.0.0.rc'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 gem 'figaro'
