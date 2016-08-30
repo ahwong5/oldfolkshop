@@ -16,6 +16,10 @@ class ItemsController < ApplicationController
     @item = Item.new
   end
 
+  def add_item
+    cookies[:cart][params[:item_id]]= { quantity: cart_params[:quantity]}
+  end
+
 
   def create
 
