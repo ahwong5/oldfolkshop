@@ -37,6 +37,8 @@ gem 'bcrypt'
 # Gems for admin panel
 gem 'remotipart', github: 'mshibuya/remotipart'
 gem 'rails_admin', '>= 1.0.0.rc'
+# Gem for user login
+gem 'devise'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 gem 'figaro'
