@@ -1,14 +1,12 @@
-<div class="notice success callout" data-closable>
-  <% flash.each do |k,v| %>
-  <section class="flash-messages">
-    <div class="alert alert-<%=k%>">
+<% flash.each do |k,v| %>
+<section class="flash-messages">
+  <div class="callout <%=k%>" data-closable>
+    <div class="message">
       <button class="close-button" aria-label="Dismiss alert" type="button" data-close>
         <span aria-hidden="true">&times;</span>
       </button>
-      <div class="message">
-        <%= display_message(v) %>
-      </div>
+      <%= display_message(v) %>
     </div>
-  </section>
-  <% end %>
-</div>
+  </div>
+</section>
+<% end %>
