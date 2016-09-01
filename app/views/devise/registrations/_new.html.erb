@@ -23,11 +23,13 @@
     </div>
 
     <div class="actions">
-      <%= f.submit "Sign up" %>
+      <%= f.submit "Sign Up", class: 'hollow button' %>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <%=link_to "<i class='fa fa-facebook-official' aria-hidden='true'></i> Sign Up with Facebook".html_safe, user_facebook_omniauth_authorize_path, class: 'button' %>
     </div>
   <% end %>
 
-  <%= render "devise/shared/links" %>
+  <!-- <%= render "devise/shared/links" %> -->
   <button class="close-button" data-close aria-label="Close modal" type="button">
     <span aria-hidden="true">&times;</span>
   </button>

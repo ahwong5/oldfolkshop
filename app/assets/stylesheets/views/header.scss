@@ -64,4 +64,10 @@
   .js-drilldown-back::before {
     border-color: transparent #fff transparent transparent;
   }
+
+  ul.dropdown.menu img {
+    border-radius: 50%;
+    border: 1px solid #6d9dc5;
+    float: left;
+  }
 }

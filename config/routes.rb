@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  devise_for :users
+
+  devise_for :users, controllers: { omniauth_callbacks: "users/omniauth_callbacks" }
+
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 
   root to: 'static_pages#home'
@@ -19,6 +21,7 @@ Rails.application.routes.draw do
   resources :ordered_items
   resources :items
   resources :categories
+
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 

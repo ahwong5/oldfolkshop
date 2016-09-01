@@ -24,8 +24,6 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
 # Use foundation framework for front end
 gem 'foundation-rails'
 # Use slim templating engine
@@ -37,6 +35,8 @@ gem 'remotipart', github: 'mshibuya/remotipart'
 gem 'rails_admin', '>= 1.0.0.rc'
 # Gem for user login
 gem 'devise'
+# Facebook login
+gem 'omniauth-facebook'
 # User authorization
 gem 'pundit'
 # Use Capistrano for deployment
