@@ -12,11 +12,12 @@
   </head>
 
   <body>
-    <%= render "devise/registrations/new" %>
-    <%= render "devise/sessions/login" %>
-    <%= render "partials/header" %>
+    <%= render partial: "devise/registrations/new" %>
+    <%= render partial: "devise/sessions/login" %>
+    <%= render partial: "partials/header" %>
 
     <%= render partial: "partials/flash_messages" %>
+    <!-- might be duplicated as we have flash_messages 
     <% if notice.present? %>
     <div class="notice success callout" data-closable>
       <p><%= notice %></p>
@@ -32,9 +33,9 @@
         <span aria-hidden="true">&times;</span>
       </button>
     </div>
-    <% end %>
+    <% end %> -->
 
     <%= yield %>
-    <%= render "partials/footer" %>
+    <%= render partial: "partials/footer" %>
   </body>
 </html>
