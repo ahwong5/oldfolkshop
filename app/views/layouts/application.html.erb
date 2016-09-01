@@ -12,12 +12,13 @@
   </head>
 
   <body>
+    <%= render partial: "partials/facebooksdk" %>
     <%= render partial: "devise/registrations/new" %>
     <%= render partial: "devise/sessions/login" %>
     <%= render partial: "partials/header" %>
 
     <%= render partial: "partials/flash_messages" %>
-    <!-- might be duplicated as we have flash_messages 
+    <!-- might be duplicated as we have flash_messages
     <% if notice.present? %>
     <div class="notice success callout" data-closable>
       <p><%= notice %></p>

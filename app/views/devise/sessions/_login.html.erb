@@ -20,11 +20,15 @@
     <% end -%>
 
     <div class="actions">
-      <%= f.submit "Log in" %>
+      <%= f.submit "Log In", class: 'hollow button' %>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <%=link_to "<i class='fa fa-facebook-official' aria-hidden='true'></i> Log In with Facebook".html_safe, user_facebook_omniauth_authorize_path, class: 'button' %>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <%=link_to "Forgot Your Password?", new_user_password_path, class: 'secondary hollow button' %>
     </div>
   <% end %>
 
-  <%= render "devise/shared/links" %>
+  <!-- <%= render "devise/shared/links" %> -->
   <button class="close-button" data-close aria-label="Close modal" type="button">
     <span aria-hidden="true">&times;</span>
   </button>
