@@ -5,6 +5,15 @@ Rails.application.routes.draw do
   get :about, to: 'static_pages#about'
   get :faq, to: 'static_pages#FAQ'
 
+  # get '/cart' => 'cart#index'
+  # get '/cart/clear' => 'cart#clearCart'
+  # get '/cart/:id' => 'cart#add'
+
+  get :cart, to: "carts#show"
+  post :add_item, to: "carts#add_item"
+  delete :remove_item, to: "carts#remove_item"
+  patch :update_item, to: "carts#update_item"
+
   resources :orders
   resources :ordered_items
   resources :items
@@ -12,5 +21,4 @@ Rails.application.routes.draw do
 
 
 
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

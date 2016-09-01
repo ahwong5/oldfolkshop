@@ -26,7 +26,7 @@
         <td><%= item.category.name %></td>
         <td><%= item.inventory %></td>
         <td><%= item.status %></td>
-        <td><%= link_to 'AddToCart' %></td>
+        <td><%= link_to 'Add', add_item_path(id: item, quantity: 1), method: :post %></td>
         <td><%= link_to 'Show', item_path(item) %></td>
         <td><%= link_to 'Edit', edit_item_path(item) %></td>
         <td><%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
