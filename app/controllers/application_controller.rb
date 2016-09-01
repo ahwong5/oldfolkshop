@@ -4,7 +4,8 @@ class ApplicationController < ActionController::Base
 
   rescue_from Pundit::NotAuthorizedError do |exception|
     flash[:danger] = "You're not authorized"
-    redirect_to request.referrer || root_path
+    # changed root_path to '/' because of routing error caused by rails_admin
+    redirect_to request.referrer || '/'
   end
 
   private
