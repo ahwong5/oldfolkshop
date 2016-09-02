@@ -33,12 +33,14 @@
     <%= link_to "Remove", remove_item_path(id: item), method: :delete %>
     <br><br>
   </li>
+  <% total += item.price * item.quantity.to_i %>
 <% end %>
 
 <% if @items.empty? %>
 <% else %>
-  <!-- Order Total: <%= number_to_currency(total, :unit => 'RM') %> -->
+  Order Total: <%= number_to_currency(total, :unit => 'RM') %>
 <% end %>
 
-<a href="#" class="button">Place Order</a>
+<br>
+<a href="/addresses" class="button">Check Out Order</a>
 </ul>

@@ -22,6 +22,13 @@ Rails.application.routes.draw do
   resources :items
   resources :categories
 
+  get :addresses, to: "shippings#address"
+  get :shippings, to: "shippings#index"
+  get :order_confirmation, to: "shippings#order_confirmation"
+  get :payments, to: "payments#index"
+
+
+
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
