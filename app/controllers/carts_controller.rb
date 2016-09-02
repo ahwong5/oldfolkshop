@@ -2,6 +2,18 @@ class CartsController < ApplicationController
   before_action :load_cart
   after_action :write_cart, only: [:add_item, :remove_item, :update_item]
 
+  def load_cart
+    if cookies[:cart]
+      @cart = JSON.parse(cookies[:cart])
+    else
+      @cart = {}
+    end
+  end
+
+  def write_cart
+    cookies[:cart] = JSON.generate(@cart)
+  end
+
   def show
     @items = []
     @cart.each do |item_id,quantity|
@@ -33,18 +45,6 @@ class CartsController < ApplicationController
   def remove_item
     @cart.delete params[:id]
     redirect_to cart_path
-  end
-
-  def load_cart
-    if cookies[:cart]
-      @cart = JSON.parse(cookies[:cart])
-    else
-      @cart = {}
-    end
-  end
-
-  def write_cart
-    cookies[:cart] = JSON.generate(@cart)
   end
 
 end

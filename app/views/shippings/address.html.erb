@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Confirm your address</h1>
+
+<table>
+<thead>
+  <tr>
+    <th>Name</th>
+    <th>Address</th>
+    <th>Phone</th>
+  </tr>
+</thead>
+
+  <tbody>
+
+      <tr>
+        <td><%= current_user.name %></td>
+        <td><%= current_user.address %></td>
+        <td><%= current_user.phone %></td>
+      </tr>
+
+  </tbody>
+
+</table>
+
+<br>
+<a href="/shippings" class="button">Next</a>

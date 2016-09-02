@@ -26,17 +26,12 @@
         <td><%= item.category.name %></td>
         <td><%= item.inventory %></td>
         <td><%= item.status %></td>
-        <td><%= link_to 'Add', add_item_path(id: item, quantity: 1), method: :post %></td>
+        <td><%= link_to 'AddToCart', add_item_path(id: item, quantity: 1), method: :post %></td>
         <td><%= link_to 'Show', item_path(item) %></td>
-        <td><%= link_to 'Edit', edit_item_path(item) %></td>
-        <td><%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-<div class="text-center">
-<%= link_to 'New Item', new_item_path %>
-</div>
 <br>
