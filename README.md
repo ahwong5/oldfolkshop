@@ -1,24 +1,11 @@
-# README
+# Shopping Application
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a shopping application developed in two weeks as part of MaGIC Full Stack Web Development bootcamp with the following project requirements:
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Users can view the landing page to find out more about the site.
+* Users can view, add, and remove items available in the store without requiring to log in.
+* Users checking out would need to log in first.
+* Users can log in via email/password or through Facebook.
+* Users can make payments through braintree, a credit card payment provider, or billplz.
+* Users can search for items using keywords.
+* Admin users can update orders as delivered, or add new items to the store using an admin panel.
