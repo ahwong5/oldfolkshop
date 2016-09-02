@@ -1,32 +1,52 @@
 <div class="header">
-  <div class="top-bar" id="main-menu">
-    <div class="top-bar-left">
-      <ul class="menu" data-responsive-menu="drilldown medium-dropdown">
-        <li class="menu-text">Old Folk Shop</li>
-        <li><%=link_to "Home", root_path %></li>
-        <li><%=link_to "About", about_path %></li>
-        <li><%=link_to "FAQ", faq_path %></li>
+
+  <nav class="white" role="navigation">
+    <div class="nav-wrapper container">
+      <%=link_to "Old Folk Shop", root_path, class:'brand-logo', id:'logo-container' %>
+      <ul class="right hide-on-med-and-down">
         <li><%=link_to "Categories", categories_path %></li>
         <li><%=link_to "Items", items_path %></li>
-      </ul>
-    </div>
-    <div class="top-bar-right">
-      <ul class="dropdown menu" data-dropdown-menu>
-        <li><%=link_to "Shopping Cart", cart_path %></li>
+        <!-- <li><input type="search" placeholder="Search for products"></li>
+        <li><button type="button" class="button">Search</button></li> -->
+        <li><%=link_to "<i class='fa fa-shopping-cart fa-2x' aria-hidden='true'></i>".html_safe, cart_path %></li>
         <% if user_signed_in? %>
-          <% if current_user.image %>
-              <%=image_tag(current_user.image, height: '40', width: '40') %>
+        <li>
+          <a href='#' class="dropdown-button" data-activates='dropdownUser'>
+            <% if current_user.image %>
+            <%=image_tag(current_user.image, height: '40', width: '40') %>
+            <% end %>
+            <% if current_user.name %>
+            <%= current_user.name %>
+            <% else %>
+            Account
+            <% end %>
+             &nbsp;&nbsp;<i class="fa fa-chevron-circle-down" aria-hidden="true"></i>
+          </a>
+        </li>
+          <!-- Dropdown Structure -->
+          <ul id='dropdownUser' class='dropdown-content'>
+            <li><%=link_to "Settings", edit_user_registration_path %></li>
+            <% if current_user.admin? %>
+            <li><%=link_to "Admin Panel", rails_admin_path %></li>
+            <% end %>
+            <li><%=link_to "Log Out", destroy_user_session_path, method: :delete %></li>
+          </ul>
+          <% else %>
+          <li><a class="waves-effect waves-light btn modal-trigger" data-target="signup">Sign Up</a></li>
+          <li><a class="waves-effect waves-light btn modal-trigger" data-target="login">Log In</a></li>
           <% end %>
-        <li><%=link_to current_user.name, edit_user_registration_path %></li>
-        <% if current_user.admin? %>
-          <li><%=link_to "Admin Panel", rails_admin_path %></li>
-        <% end %>
-        <li><%=link_to "Log Out", destroy_user_session_path, method: :delete %></li>
-        <% else %>
-        <li><a data-open="signup">Sign Up</a></li>
-        <li><a data-open="login">Log In</a></li>
-        <% end %>
       </ul>
+
+
+      <ul id="nav-mobile" class="side-nav">
+        <li><%=link_to "Home", root_path %></li>
+        <li><%=link_to "Categories", categories_path %></li>
+        <li><%=link_to "Items", items_path %></li>
+        <li><input type="search" placeholder="Search for products"></li>
+        <li><button type="button" class="waves-effect waves-light btn">Search</button></li>
+      </ul>
+      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
     </div>
-  </div>
+  </nav>
+
 </div>

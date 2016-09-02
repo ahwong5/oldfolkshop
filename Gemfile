@@ -24,8 +24,8 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
-# Use foundation framework for front end
-gem 'foundation-rails'
+# Use materialize framework for front end
+gem 'materialize-sass'
 # Use slim templating engine
 gem 'slim'
 # Use font-awesome icons
