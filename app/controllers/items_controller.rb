@@ -3,7 +3,12 @@ class ItemsController < ApplicationController
   # before_action :authenticate!, only: [:index, :show, :new, :create, :edit, :update, :destroy]
 
   def index
-    @items = Item.all.order(created_at: :desc)
+    if params[:search]
+      Item.reindex
+      @items = Item.search(params[:search])
+    else
+      @items = Item.all.order(created_at: :desc)
+    end
   end
 
 

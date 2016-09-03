@@ -1,14 +1,16 @@
+
+
+
 <% flash.each do |k,v| %>
 <section class="flash-messages">
   <% k = "alert" if k == "danger" %>
   <% k = "success" if k == "notice" %>
-  <div class="callout <%=k%>" data-closable>
-    <div class="message">
-      <button class="close-button" aria-label="Dismiss alert" type="button" data-close>
+  <div class="alert alert-<%=k%> alert-dismissable" role="alert">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
         <span aria-hidden="true">&times;</span>
       </button>
+      <i class="icon-check"></i>
       <%= display_message(v) %>
-    </div>
   </div>
 </section>
 <% end %>
