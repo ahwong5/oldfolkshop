@@ -6,6 +6,8 @@ class ShippingsController < ApplicationController
   end
 
   def order_confirmation
+    @totalprice = 0
+
     @cart = JSON.parse(cookies[:cart])
     @items = []
     @cart.each do |item_id,quantity|
@@ -14,6 +16,9 @@ class ShippingsController < ApplicationController
         quantity
       end
       @items << item
+
+      @totalprice += item.price.to_f * item.quantity.to_i
+
     end
 
   end

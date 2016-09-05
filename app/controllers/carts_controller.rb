@@ -16,12 +16,17 @@ class CartsController < ApplicationController
 
   def show
     @items = []
+    @totalprice = 0
+
     @cart.each do |item_id,quantity|
       item = Item.find_by(id: item_id)
       item.define_singleton_method(:quantity) do
         quantity
       end
       @items << item
+
+      @totalprice += item.price.to_f * item.quantity.to_i
+      
     end
   end
 
