@@ -8,4 +8,6 @@ class Item < ApplicationRecord
                           length: { minimum: 10 }
   validates :price, presence: true
   enum status: [:active, :sale, :inactive]
+  searchkick
+  mount_uploader :image, ImageUploader
 end

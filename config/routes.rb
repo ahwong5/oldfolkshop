@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get :about, to: 'static_pages#about'
   get :faq, to: 'static_pages#FAQ'
 
+
   # get '/cart' => 'cart#index'
   # get '/cart/clear' => 'cart#clearCart'
   # get '/cart/:id' => 'cart#add'
