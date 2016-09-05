@@ -11,11 +11,11 @@ $primary-color-dark: false !default;
 @if not $primary-color-dark {
   $primary-color-dark: darken($primary-color, 15%);
 }
-$secondary-color: color("light-blue", "lighten-1") !default;
+$secondary-color: color("indigo", "lighten-1") !default;
 $success-color: color("green", "base") !default;
 $error-color: color("red", "base") !default;
 
-$link-color: color("light-blue", "darken-1") !default;
+$link-color: color("indigo", "darken-1") !default;
 @import 'materialize';
 /* Add imports of custom sass/scss files here */
 
@@ -35,10 +35,16 @@ $link-color: color("light-blue", "darken-1") !default;
  *= require foundation_and_overrides
  *= require_self
  */
+ nav {
+   background: #0097A7;
+ }
 
- nav ul a,
  nav .brand-logo {
-   color: #444;
+   color: white;
+ }
+
+ nav ul a {
+   color: white;
  }
 
  p {
@@ -46,7 +52,7 @@ $link-color: color("light-blue", "darken-1") !default;
  }
 
  .button-collapse {
-   color: #26a69a;
+   color: white;
  }
 
  .parallax-container {
@@ -84,4 +90,14 @@ $link-color: color("light-blue", "darken-1") !default;
 
  footer.page-footer {
    margin: 0;
+ }
+
+ .alert {
+   background-color: #f44336;
+   color: white;
+ }
+
+ .success {
+   background-color: #4caf50;
+   color: white;
  }

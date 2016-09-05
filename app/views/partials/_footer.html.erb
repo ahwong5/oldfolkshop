@@ -1,5 +1,5 @@
 <div class="footer">
-  <footer class="page-footer light-blue lighten-3">
+  <footer class="page-footer indigo lighten-4">
     <div class="container">
       <div class="row">
         <div class="col l6 s12">
@@ -8,22 +8,22 @@
 
 
         </div>
-        <div class="col l3 s12">
+        <div class="col l3 s6">
           <h5 class="black-text">Categories</h5>
           <ul>
-            <li><a class="blue-text" href="#!">Medicines</a></li>
-            <li><a class="blue-text" href="#!">Adult Diapers</a></li>
-            <li><a class="blue-text" href="#!">Hearing Aids</a></li>
-            <li><a class="blue-text" href="#!">Elderly Phones</a></li>
+            <li><%=link_to "Medicines", category_path(1) %></li>
+            <li><%=link_to "Adult Diapers", category_path(2) %></li>
+            <li><%=link_to "Hearing Aids", category_path(3) %></li>
+            <li><%=link_to "Elderly Phones", category_path(4) %></li>
           </ul>
         </div>
-        <div class="col l3 s12">
+        <div class="col l3 s6">
           <h5 class="black-text">&nbsp;</h5>
           <ul>
-            <li><a class="blue-text" href="#!">Walkers</a></li>
-            <li><a class="blue-text" href="#!">Wheelchairs</a></li>
-            <li><a class="blue-text" href="#!">Bed Rails</a></li>
-            <li><a class="blue-text" href="#!">Bathroom Equipments</a></li>
+            <li><%=link_to "Walkers", category_path(5) %></li>
+            <li><%=link_to "Wheelchairs", category_path(6) %></li>
+            <li><%=link_to "Bed Rails", category_path(7) %></li>
+            <li><%=link_to "Bathroom Equipments", category_path(8) %></li>
           </ul>
         </div>
       </div>
