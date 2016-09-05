@@ -61,19 +61,17 @@
     <span class="small-1 large-1 columns pull-left">
       <%= text_field_tag :quantity, item.quantity %>
     </span>
-    <span class="small-1 large-1 columns pull-left">
-      <%= submit_tag 'Update', class: "button" %>
-    </span>
   </div>
     <%end%>
-    <br>
-    <%= link_to "Remove", remove_item_path(id: item), method: :delete %>
-    <br><br>
+
   </li>
 <% end %>
-
-
-
-
+Total Price = RM <%= @totalprice %>
 <br>
-<a href="https://www.billplz.com/" class="button">Confirm Order & Proceed to Payment</a>
+
+<% if current_user %>
+<%= link_to "Confirm Order", orders_path(totalprice: @totalprice, user_id: current_user.id), method: :post %>
+<br><br>
+<% else %>
+<p>You must login to Checkout your items</p>
+<% end %>

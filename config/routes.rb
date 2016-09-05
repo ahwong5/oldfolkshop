@@ -29,7 +29,10 @@ Rails.application.routes.draw do
   get :payments, to: "payments#index"
 
 
-
+  scope '/webhooks', controller: :webhooks do
+      post 'payment-callback', to: 'webhooks#payment_callback', as:
+        :payment_callback
+    end
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
