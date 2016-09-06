@@ -1,13 +1,17 @@
 class OrdersController < ApplicationController
+  before_action :authenticate_user!
 
-  def show
 
+  def index
+    @orders = current_user.orders
   end
 
+
+  def show
+  end
+
+
   def create
-    # @order = current_user.orders.new(order_params)
-
-
     @order = Order.create(totalprice: params[:totalprice], user_id: params[:user_id])
 
     if @order.save
@@ -27,5 +31,6 @@ class OrdersController < ApplicationController
   def order_params
     params.require(:order).permit(:user_id, :status, :totalprice, :bill_id, :bill_url, :due_at, :paid_at)
   end
+
 
 end
