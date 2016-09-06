@@ -20,90 +20,90 @@ $link-color: color("indigo", "darken-1") !default;
 /* Add imports of custom sass/scss files here */
 
 /*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require foundation_and_overrides
- *= require_self
- */
- nav {
-   background: #0097A7;
- }
+* This is a manifest file that'll be compiled into application.css, which will include all the files
+* listed below.
+*
+* Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+* or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+*
+* You're free to add application-wide styles to this file and they'll appear at the bottom of the
+* compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+* files in this directory. Styles in this file should be added after the last require_* statement.
+* It is generally better to create a new file per style scope.
+*
+*= require_tree .
+*= require foundation_and_overrides
+*= require_self
+*/
+nav {
+  background: #0097A7;
+}
 
- nav .brand-logo {
-   color: white;
- }
+nav .brand-logo {
+  color: white;
+}
 
- nav ul a {
-   color: white;
- }
+nav ul a {
+  color: white;
+}
 
- p {
-   line-height: 2rem;
- }
+p {
+  line-height: 2rem;
+}
 
- .button-collapse {
-   color: white;
- }
+.button-collapse {
+  color: white;
+}
 
- .parallax-container {
-   min-height: 380px;
-   line-height: 0;
-   height: auto;
-   color: rgba(255,255,255,.9);
- }
-   .parallax-container .section {
-     width: 100%;
-   }
+.parallax-container {
+  min-height: 380px;
+  line-height: 0;
+  height: auto;
+  color: rgba(255,255,255,.9);
+}
+.parallax-container .section {
+  width: 100%;
+}
 
- @media only screen and (max-width : 992px) {
-   .parallax-container .section {
-     position: absolute;
-     top: 40%;
-   }
-   #index-banner .section {
-     top: 10%;
-   }
- }
+@media only screen and (max-width : 992px) {
+  .parallax-container .section {
+    position: absolute;
+    top: 40%;
+  }
+  #index-banner .section {
+    top: 10%;
+  }
+}
 
- @media only screen and (max-width : 600px) {
-   #index-banner .section {
-     top: 0;
-   }
- }
+@media only screen and (max-width : 600px) {
+  #index-banner .section {
+    top: 0;
+  }
+}
 
- .icon-block {
-   padding: 0 15px;
- }
- .icon-block .material-icons {
-   font-size: inherit;
- }
+.icon-block {
+  padding: 0 15px;
+}
+.icon-block .material-icons {
+  font-size: inherit;
+}
 
- footer.page-footer {
-   margin: 0;
- }
+footer.page-footer {
+  margin: 0;
+}
 
- .alert {
-   background-color: #f44336;
-   color: white;
- }
+.alert {
+  background-color: #f44336;
+  color: white;
+}
 
- .success {
-   background-color: #4caf50;
-   color: white;
- }
+.success {
+  background-color: #4caf50;
+  color: white;
+}
 
- input#search {
-   width: 60%;
-   color: black;
-   margin: 0 auto;
- }
+input#search {
+  width: 60%;
+  color: black;
+  margin: 0 auto;
+}
