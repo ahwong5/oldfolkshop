@@ -101,3 +101,9 @@ $link-color: color("indigo", "darken-1") !default;
    background-color: #4caf50;
    color: white;
  }
+
+ input#search {
+   width: 60%;
+   color: black;
+   margin: 0 auto;
+ }

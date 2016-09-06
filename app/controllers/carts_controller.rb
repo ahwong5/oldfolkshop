@@ -26,7 +26,7 @@ class CartsController < ApplicationController
       @items << item
 
       @totalprice += item.price.to_f * item.quantity.to_i
-      
+
     end
   end
 
@@ -38,6 +38,7 @@ class CartsController < ApplicationController
     else
       @cart[params[:id]] = params[:quantity]
     end
+    flash[:success] = "Item has been added to shopping cart."
   end
 
   def update_item
@@ -49,6 +50,7 @@ class CartsController < ApplicationController
 
   def remove_item
     @cart.delete params[:id]
+    flash[:success] = "Item has been removed from shopping cart."
     redirect_to cart_path
   end
 

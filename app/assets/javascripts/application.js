@@ -22,4 +22,5 @@ $(document).ready(function(){
   });
   $(".button-collapse").sideNav();
   Materialize.toast($toastContent, 5000, $toastClass);
+  $('.cart').material_chip();
 });
