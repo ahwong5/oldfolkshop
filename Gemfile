@@ -44,6 +44,8 @@ gem 'searchkick'
 # Gems for image
 gem 'carrierwave'
 gem "mini_magick"
+# Gem for pagination
+gem 'kaminari'
 # Redis needed for action cable
 gem 'redis'
 # Use Capistrano for deployment

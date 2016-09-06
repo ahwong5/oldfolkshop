@@ -1,5 +1,6 @@
 <div class="container">
   <h1>Items</h1>
+  <%= paginate @items %>
   <div class="row center-align">
     <% @items.each do |item| %>
     <% next if item.status == 'inactive'%>
@@ -12,4 +13,5 @@
     </div>
     <% end %>
   </div>
+  <%= paginate @items %>
 </div>
