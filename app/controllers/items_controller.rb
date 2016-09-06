@@ -1,12 +1,7 @@
 class ItemsController < ApplicationController
 
   def index
-    if params[:search]
-      Item.reindex
-      @items = Item.search(params[:search]).page params[:page]
-    else
-      @items = Item.all.order(created_at: :desc).page params[:page]
-    end
+    @items = Item.search(search_params, page: params[:page], per_page: 15)
   end
 
 
@@ -14,4 +9,9 @@ class ItemsController < ApplicationController
     @item = Item.find_by(id: params[:id])
   end
 
+  private
+
+  def search_params
+    params.dig(:search) || "*"
+  end
 end
