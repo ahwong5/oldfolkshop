@@ -10,4 +10,5 @@ class Item < ApplicationRecord
   enum status: [:active, :sale, :inactive]
   searchkick
   mount_uploader :image, ImageUploader
+  max_paginates_per 15
 end
