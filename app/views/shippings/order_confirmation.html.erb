@@ -22,56 +22,51 @@
 </table>
 
 <div>
-<h3>Your Payment Info</h3>
-<table>
-<thead>
-  <tr>
-    <th>Payment Provider</th>
-    <th>Available Payment Methods</th>
-    <th>Estimated Delivery</th>
-  </tr>
-</thead>
-<tbody>
-  <tr>
-    <td>Bill Plz</td>
-    <td>Credit Card or Internet Banking</td>
-    <td>1 to 2 days</td>
-  </tr>
-</tbody>
-</table>
+  <h3>Your Payment Info</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Payment Provider</th>
+        <th>Available Payment Methods</th>
+        <th>Estimated Delivery</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Bill Plz</td>
+        <td>Credit Card or Internet Banking</td>
+        <td>1 to 2 days</td>
+      </tr>
+    </tbody>
+  </table>
 
-<h3>Your Order Items</h3>
+  <h3>Your Order Items</h3>
 
-<% @items %>
+  <% @items %>
 
-<ul>
-<% @items.each do |item| %>
-  <li>
-    <%= link_to item.name, item %>
-    <br>
-    <%= item.description %>
-    <br>
-    <%= number_to_currency(item.price, :unit => 'RM') %>
-    <br>
-    <%= form_tag update_item_path(id: item.id), method: :patch do%>
-    <div class="row" >
-    <span class="small-1 large-1 columns pull-left">
-      <%= label_tag "Quantity:", nil, class: "right inline" %>
-    </span>
-    <span class="small-1 large-1 columns pull-left">
-      <%= text_field_tag :quantity, item.quantity %>
-    </span>
-  </div>
-    <%end%>
+  <ul>
+    <% @items.each do |item| %>
+    <li>
+      <%= link_to item.name, item %>
+      <br>
+      <%= item.description %>
+      <br>
+      <%= number_to_currency(item.price, :unit => 'RM') %>
+      <br>
+      <%= form_tag update_item_path(id: item.id), method: :patch do%>
+      <div class="row" >
+        <span class="small-1 large-1 columns pull-left">
+          <%= label_tag "Quantity:", nil, class: "right inline" %>
+        </span>
+        <span class="small-1 large-1 columns pull-left">
+          <%= text_field_tag :quantity, item.quantity %>
+        </span>
+      </div>
+      <%end%>
 
-  </li>
-<% end %>
-Total Price = RM <%= @totalprice %>
-<br>
-
-<% if current_user %>
-<%= link_to "Confirm Order", orders_path(totalprice: @totalprice, user_id: current_user.id), method: :post %>
-<br><br>
-<% else %>
-<p>You must login to Checkout your items</p>
-<% end %>
+    </li>
+    <% end %>
+    Total Price = RM <%= @totalprice %>
+    <br><br>
+    <%= link_to "Confirm Order", orders_path(totalprice: @totalprice, user_id: current_user.id), method: :post, class: "btn waves-effect waves-light" %>
+    <br><br>

@@ -23,6 +23,21 @@
   </div>
 
   <div class="field">
+    <%= f.label :address %><br />
+    <%= f.text_field :address, autocomplete: "off" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :phone %><br />
+    <%= f.number_field :phone, autocomplete: "off" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "off" %>
+  </div>
+  
+  <div class="field">
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>

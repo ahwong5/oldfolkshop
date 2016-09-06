@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
-  devise_for :users, controllers: { omniauth_callbacks: "users/omniauth_callbacks" }
+  devise_for :users, controllers: {
+    omniauth_callbacks: "users/omniauth_callbacks",
+  }
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 
@@ -9,10 +11,13 @@ Rails.application.routes.draw do
   get :faq, to: 'static_pages#FAQ'
 
 
+
+
   # get '/cart' => 'cart#index'
   # get '/cart/clear' => 'cart#clearCart'
   # get '/cart/:id' => 'cart#add'
 
+  get '/users/:id' => 'devise/dashboards#show'
   get :cart, to: "carts#show"
   post :add_item, to: "carts#add_item"
   delete :remove_item, to: "carts#remove_item"
@@ -22,6 +27,8 @@ Rails.application.routes.draw do
   resources :ordered_items
   resources :items
   resources :categories
+  # resources :users
+
 
   get :addresses, to: "shippings#address"
   get :shippings, to: "shippings#index"
