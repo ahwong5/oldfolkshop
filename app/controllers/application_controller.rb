@@ -29,4 +29,18 @@ class ApplicationController < ActionController::Base
     User
   end
   helper_method :resource_class
+
+  def total_item
+    if cookies[:cart]
+      @cart = JSON.parse(cookies[:cart])
+    else
+      @cart = {}
+    end
+    total_items = 0
+    @cart.each do |item_id,quantity|
+      total_items +=  quantity.to_i
+    end
+    return total_items
+  end
+  helper_method :total_item
 end

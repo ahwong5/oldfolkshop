@@ -17,7 +17,7 @@
 end
 
 
-Category.find_or_create_by(name: "Medicines", description: "Daily vitamin supplies & healthy supplements")
+Category.find_or_create_by(name: "Medicines", description: "Daily vitamin supplies and supplements")
 Category.find_or_create_by(name: "Adult Diapers", description: "Personal hygience and other wearables")
 Category.find_or_create_by(name: "Hearing Aids", description: "Communication aids and assistance")
 Category.find_or_create_by(name: "Elderly Phones", description: "Extra large number pad and other features")
