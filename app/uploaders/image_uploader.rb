@@ -37,6 +37,10 @@ class ImageUploader < CarrierWave::Uploader::Base
   unless Rails.env.test?
     process resize_to_fit: [600, 600]
   end
+
+  version :medium do
+    process resize_to_fill: [400, 400]
+  end
   # Create different versions of your uploaded files:
   version :thumb do
     process resize_to_fill: [50, 50]

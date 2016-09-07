@@ -98,3 +98,7 @@ input#search {
   text-align: center;
   width: 50px;
 }
+
+.col s12 m4 l4:nth-child(4n+1) {
+  clear: left;
+}
