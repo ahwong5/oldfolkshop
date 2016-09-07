@@ -6,7 +6,8 @@ class CategoriesController < ApplicationController
 
 
   def show
-    @category = Category.find_by(id: params[:id])
+    @category = Category.includes(:items).find(params[:id])
+    @items = @category.items.order("created_at DESC").page params[:page]
   end
 
 
