@@ -1,14 +1,17 @@
-<p id="notice"><%= notice %></p>
 <div class="container">
-<p>
-  <strong>Name:</strong>
-  <%= @category.name%>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @category.description %>
-</p>
-<%= link_to 'Back', categories_path, class:"btn waves-effect waves-light" %>
-<br><br>
+  <h1>Items</h1>
+  <div class="row center-align">
+    <%= paginate @items %>
+    <% @items.each do |item| %>
+    <% next if item.status == 'inactive'%>
+    <div class="col s12 m4 l4">
+      <h2 class="center"><%= image_tag item.image, class: "responsive-img" %></h2>
+      <h5 class="center"><%= link_to item.name, item_path(item) %></h5>
+      <p class="light"><%= item.description %></p>
+      <p class="light"><%= number_to_currency(item.price, unit: "RM ") %></p>
+      <p class="light"><%= link_to "<i class='fa fa-shopping-cart fa-2x' aria-hidden='true'> </i> &nbsp; Add To Cart".html_safe, add_item_path(id: item, quantity: 1), method: :post, class: 'waves-effect waves-light btn' %></p>
+    </div>
+    <% end %>
+    <%= paginate @items %>
+  </div>
 </div>
