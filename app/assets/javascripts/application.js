@@ -15,12 +15,3 @@
 //= require materialize-sprockets
 //= require turbolinks
 //= require_tree .
-$(document).ready(function(){
-  // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
-  $('.modal-trigger').leanModal({
-    opacity: .7
-  });
-  $(".button-collapse").sideNav();
-  Materialize.toast($toastContent, 5000, $toastClass);
-  $('.cart').material_chip();
-});
