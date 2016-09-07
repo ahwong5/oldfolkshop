@@ -1,5 +1,5 @@
 <p id="notice"><%= notice %></p>
-
+<div class="container">
 <h1>Confirm Your Order Details</h1>
 
 <br><br>
@@ -69,4 +69,6 @@
     Total Price = RM <%= @totalprice %>
     <br><br>
     <%= link_to "Confirm Order", orders_path(totalprice: @totalprice, user_id: current_user.id), method: :post, class: "btn waves-effect waves-light" %>
+
     <br><br>
+  </div>
