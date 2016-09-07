@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+<div class="container">
+<h1>Confirm your address</h1>
+
+
+
+<% @addresses.each do |address| %>
+<tr>
+  <td><%= address.name %></td><br>
+  <td><%= address.company %></td><br>
+  <td><%= address.telephone %></td><br>
+  <td><%= address.address %></td><br>
+  <td><%= address.city %></td><br>
+  <td><%= address.state %></td><br>
+  <td><%= address.zip %></td><br>
+  <td><%= address.country %></td><br>
+  <br>
+</tr>
+<% end %>
+
+
+
+<br>
+<a href="/cart" class="btn waves-effect waves-light">Back</a>
+<a href="/shippings" class="btn waves-effect waves-light">Next</a>
+<br><br>
+</div>

@@ -35,6 +35,7 @@ class CartsController < ApplicationController
       quantity = params[:quantity].to_i
       quantityOld = @cart[params[:id]].to_i
       @cart[params[:id]] = quantityOld + quantity
+      redirect_to cart_path
     else
       @cart[params[:id]] = params[:quantity]
     end

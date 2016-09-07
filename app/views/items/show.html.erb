@@ -6,18 +6,15 @@
     <div class="col s6"><%= image_tag @item.image.medium %></div>
     <div class="col s6">
       <p>
-        <strong>Name:</strong>
-        <%= @item.name%>
+        <h2><%= @item.name%></h2>
       </p>
 
       <p>
-        <strong>Description:</strong>
-        <%= @item.description %>
+        <h5><%= @item.description %></h5>
       </p>
 
       <p>
-        <strong>Price:</strong>
-        <%= @item.price %>
+        <h5><%= number_to_currency(@item.price, :unit => 'RM') %></h5>
       </p>
 
       <p>

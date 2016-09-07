@@ -1,0 +1,52 @@
+<div class="container">
+  <%= form_for(@address) do |f| %>
+    <h1>
+      Add New Address
+    </h1>
+
+    <div>
+      <h4> <%= f.label :text_field, "Name" %> </h4>
+      <%= f.text_field :name %>
+    </div>
+
+    <div>
+      <h4> <%= f.label :text_field, "Company" %> </h4>
+      <%= f.text_field :company %>
+    </div>
+
+    <div>
+      <h4> <%= f.label :integer_field, "Telephone" %> </h4>
+      <%= f.text_field :telephone %>
+    </div>
+
+    <div>
+      <h4> <%= f.label :text_field, "Street Address" %> </h4>
+      <%= f.text_field :address %>
+    </div>
+
+    <div>
+      <h4> <%= f.label :text_field, "City" %> </h4>
+      <%= f.text_field :city %>
+    </div>
+
+    <div>
+      <h4> <%= f.label :text_field, "State" %> </h4>
+      <%= f.text_field :state %>
+    </div>
+
+    <div>
+      <h4> <%= f.label :text_field, "Zip" %> </h4>
+      <%= f.text_field :zip %>
+    </div>
+
+    <div>
+      <h4> <%= f.label :text_field, "Country" %> </h4>
+      <%= f.text_field :country %>
+    </div>
+
+    <div>
+      <%= f.submit "Save Address", class:"btn waves-effect waves-light" %>
+      <br><br>
+    </div>
+  <% end %>
+</div>

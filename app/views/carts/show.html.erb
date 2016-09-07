@@ -24,11 +24,9 @@
         <tr>
           <td><%= link_to item.name, item %></td>
           <td><%= number_to_currency(item.price, :unit => 'RM') %></td>
-
+            <td>
             <%= form_tag update_item_path(id: item.id), method: :patch do%>
-
                 <%= number_field_tag :quantity, item.quantity, id:"qty-cart" %>
-
               </td>
               <td>
                 <%= button_tag 'Update', class:"btn waves-effect waves-light" %>
@@ -55,7 +53,7 @@
     <br>
     <%= link_to "Continue Shopping", items_path, class:"btn waves-effect waves-light" %>
 
-    <a href="/addresses" class="btn waves-effect waves-light">Check Out Order</a>
+    <a href="/checkout" class="btn waves-effect waves-light">Check Out Order</a>
       <br><br>
     <% end %>
 
