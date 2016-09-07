@@ -94,3 +94,7 @@ input#search {
 #qty-cart {
   border-bottom: none;
 }
+
+.col s12 m4 l4:nth-child(4n+1) {
+  clear: left;
+}

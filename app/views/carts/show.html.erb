@@ -4,11 +4,12 @@
 
   <% if @items.empty? %>
   Your Cart Is Currently Empty
+  <br><br>
   <% else %>
   <% end %>
 
-  <% total = 0 %>
-
+  <% if @items.empty? %>
+  <% else %>
   <table class="striped">
     <thead>
       <tr>
@@ -25,7 +26,6 @@
           <td><%= number_to_currency(item.price, :unit => 'RM') %></td>
           <td>
             <%= form_tag update_item_path(id: item.id), method: :patch do%>
-              <td>
                 <%= text_field_tag :quantity, item.quantity, id:"qty-cart" %>
               </td>
               <td>
@@ -40,17 +40,23 @@
     <% end %>
     </tbody>
   </table>
+  <% end %>
 
-  
 
-      <% if @items.empty? %>
-      <% else %>
-      <h2>Order Total: <%= number_to_currency(@totalprice, :unit => 'RM') %></h2>
-      <% end %>
+    <% if @items.empty? %>
+    <br>
+    <%= link_to "Continue Shopping", items_path, class:"btn waves-effect waves-light" %>
+    <br><br>
+    <% else %>
 
-      <br>
-      <%= link_to "Continue Shopping", items_path, class:"btn waves-effect waves-light" %>
-      <a href="/addresses" class="btn waves-effect waves-light">Check Out Order</a>
+    <h2>Order Total: <%= number_to_currency(@totalprice, :unit => 'RM') %></h2>
+    <br>
+    <%= link_to "Continue Shopping", items_path, class:"btn waves-effect waves-light" %>
+
+    <a href="/addresses" class="btn waves-effect waves-light">Check Out Order</a>
       <br><br>
-    </ul>
-  </div>
+    <% end %>
+
+
+  </ul>
+</div>
