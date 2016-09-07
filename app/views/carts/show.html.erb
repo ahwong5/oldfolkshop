@@ -23,25 +23,25 @@
         <tr>
           <td><%= link_to item.name, item %></td>
           <td><%= number_to_currency(item.price, :unit => 'RM') %></td>
-          <td>
+
             <%= form_tag update_item_path(id: item.id), method: :patch do%>
               <td>
-                <%= text_field_tag :quantity, item.quantity, id:"qty-cart" %>
+                <%= number_field_tag :quantity, item.quantity, id:"qty-cart" %>
               </td>
               <td>
-                <%= submit_tag 'Update', class:"btn" %>
+                <%= button_tag 'Update', class:"btn waves-effect waves-light" %>
               </td>
               <td>
                 <%= link_to "Delete", remove_item_path(id: item), method: :delete, class:"btn waves-effect waves-light" %>
               </td>
             <%end%>
-          </td>
+
         </tr>
     <% end %>
     </tbody>
   </table>
 
-  
+
 
       <% if @items.empty? %>
       <% else %>
