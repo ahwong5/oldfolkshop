@@ -1,9 +1,5 @@
 class ShippingsController < ApplicationController
-before_action :authenticate_user!
-
-  def address
-
-  end
+  before_action :authenticate_user!
 
   def index
   end

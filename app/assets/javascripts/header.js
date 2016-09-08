@@ -3,7 +3,7 @@ function modalFunctions() {
     opacity: .7
   });
   $(".button-collapse").sideNav();
-  Materialize.toast($toastContent, 5000, $toastClass);
+  // Materialize.toast($toastContent, 5000, $toastClass);
   $('.cart').material_chip();
   $('.dropdown-button').dropdown();
 }

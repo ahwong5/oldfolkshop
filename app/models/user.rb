@@ -8,8 +8,9 @@ class User < ApplicationRecord
   enum role: [:user, :moderator, :admin]
 
   mount_uploader :image, ImageUploader
-  
+
   has_many :orders
+  has_many :addresses
 
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|

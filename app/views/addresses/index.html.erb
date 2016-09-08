@@ -1,0 +1,27 @@
+<div class="container">
+<h1>Address</h1>
+
+<% if @addresses.empty? %>
+<%= link_to "Add New Address", new_address_path, class: "btn waves-effect waves-light" %>
+<!-- < %= link_to "Edit Address", edit_address_path(@address), class: "btn waves-effect waves-light" %> -->
+<% end %>
+
+      <% @addresses.each do |address| %>
+      <tr>
+        <td><%= address.name %></td><br>
+        <td><%= address.company %></td><br>
+        <td><%= address.telephone %></td><br>
+        <td><%= address.address %></td><br>
+        <td><%= address.city %></td><br>
+        <td><%= address.state %></td><br>
+        <td><%= address.zip %></td><br>
+        <td><%= address.country %></td><br>
+        <br>
+      </tr>
+      <%= link_to "Edit Address", edit_address_path(address), class: "btn waves-effect waves-light" %>
+      <br><br>
+      <% end %>
+
+
+
+</div>

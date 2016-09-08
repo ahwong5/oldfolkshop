@@ -1,9 +1,9 @@
 <p id="notice"><%= notice %></p>
 <div class="container">
-  <h1>Confirm Your Order Details</h1>
+  <h1>Order Summary</h1>
 
   <br><br>
-  <h3>Your Shipping Info</h3>
+  <h4>Your Shipping Info</h4>
   <table>
     <thead>
       <tr>
@@ -22,7 +22,7 @@
   </table>
 
   <div>
-    <h3>Your Payment Info</h3>
+    <h4>Your Payment Info</h4>
     <table>
       <thead>
         <tr>
@@ -40,7 +40,7 @@
       </tbody>
     </table>
 
-    <h3>Your Order Items</h3>
+    <h4>Your Order Items</h4>
 
     <% @items %>
 
@@ -75,6 +75,9 @@
         <h2>Order Total: <%= number_to_currency(@totalprice, :unit => 'RM') %></h2>
       <% end %>
       <br>
-      <%= link_to "Confirm Order", orders_path(totalprice: @totalprice, user_id: current_user.id), method: :post, class: "btn waves-effect waves-light" %>
+      <%= link_to "Pay using Billplz", orders_path(totalprice: @totalprice, user_id: current_user.id), method: :post, class: "btn waves-effect waves-light" %>
+      <%= link_to "Pay using Paypal", orders_path(totalprice: @totalprice, user_id: current_user.id), method: :post, class: "btn waves-effect waves-light" %>
+
       <br><br>
     </div>
+  </div>

@@ -26,10 +26,9 @@ Rails.application.routes.draw do
   resources :ordered_items
   resources :items
   resources :categories
-  # resources :users
+  resources :addresses
 
-
-  get :addresses, to: "shippings#address"
+  get :checkout, to: "addresses#address"
   get :shippings, to: "shippings#index"
   get :order_confirmation, to: "shippings#order_confirmation"
   get :payments, to: "payments#index"
