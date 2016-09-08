@@ -4,9 +4,6 @@ class AddressesController < ApplicationController
     @addresses = current_user.addresses
   end
 
-  def show
-  end
-
 
   def new
     @address = Address.new
@@ -43,6 +40,7 @@ class AddressesController < ApplicationController
 
   def address
     @addresses = current_user.addresses
+    
   end
 
   def destroy

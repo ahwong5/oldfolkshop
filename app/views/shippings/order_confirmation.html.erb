@@ -4,22 +4,16 @@
 
   <br><br>
   <h4>Your Shipping Info</h4>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Address</th>
-        <th>Phone</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><%= current_user.name %></td>
-        <td><%= current_user.address %></td>
-        <td><%= current_user.phone %></td>
-      </tr>
-    </tbody>
-  </table>
+
+  <td><%= @address.name %></td><br>
+  <td><%= @address.company %></td><br>
+  <td><%= @address.telephone %></td><br>
+  <td><%= @address.address %></td><br>
+  <td><%= @address.city %></td><br>
+  <td><%= @address.state %></td><br>
+  <td><%= @address.zip %></td><br>
+  <td><%= @address.country %></td><br>
+  <br>
 
   <div>
     <h4>Your Payment Info</h4>

@@ -5,6 +5,8 @@ class ShippingsController < ApplicationController
   end
 
   def order_confirmation
+    @address = current_user.addresses.find_by(id: params[:address])
+
     @totalprice = 0
 
     @cart = JSON.parse(cookies[:cart])
@@ -17,7 +19,6 @@ class ShippingsController < ApplicationController
       @items << item
 
       @totalprice += item.price.to_f * item.quantity.to_i
-
     end
 
   end
