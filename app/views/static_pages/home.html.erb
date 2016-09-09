@@ -1,92 +1,55 @@
-<div class="home">
+<div class="container">
+  <div class="section">
+    <!--   Icon Section   -->
+    <div class="row center-align">
+      <div class="col s12 m4">
+        <div class="icon-block">
+          <h2 class="center indigo-text"><i class="fa fa-bolt" aria-hidden="true"></i></h2>
+          <h5 class="center">Super fast shipping</h5>
 
-  <div class="container">
-    <div class="section">
-      <!--   Icon Section   -->
-      <div class="row">
-        <div class="col s12 m4">
-          <div class="icon-block">
-            <h2 class="center brown-text"><i class="material-icons">flash_on</i></h2>
-            <h5 class="center">Speeds up development</h5>
-
-            <p class="light">We did most of the heavy lifting for you to provide a default stylings that incorporate our custom components. Additionally, we refined animations and transitions to provide a smoother experience for developers.</p>
-          </div>
-        </div>
-
-        <div class="col s12 m4">
-          <div class="icon-block">
-            <h2 class="center brown-text"><i class="material-icons">group</i></h2>
-            <h5 class="center">User Experience Focused</h5>
-
-            <p class="light">By utilizing elements and principles of Material Design, we were able to create a framework that incorporates components and animations that provide more feedback to users. Additionally, a single underlying responsive system across all platforms allow for a more unified user experience.</p>
-          </div>
-        </div>
-
-        <div class="col s12 m4">
-          <div class="icon-block">
-            <h2 class="center brown-text"><i class="material-icons">settings</i></h2>
-            <h5 class="center">Easy to work with</h5>
-
-            <p class="light">We have provided detailed documentation as well as specific code examples to help new users get started. We are also always open to feedback and can answer any questions a user may have about Materialize.</p>
-          </div>
+          <p class="light">We offer same-day delivery at minimal cost. FREE next-day delivery.</p>
         </div>
       </div>
 
+      <div class="col s12 m4">
+        <div class="icon-block">
+          <h2 class="center indigo-text"><i class="fa fa-users" aria-hidden="true"></i></h2>
+          <h5 class="center">Customer-first</h5>
+
+          <p class="light">Free return and refund, no question asked. Buy first, think later.</p>
+        </div>
+      </div>
+
+      <div class="col s12 m4">
+        <div class="icon-block">
+          <h2 class="center indigo-text"><i class="fa fa-comments" aria-hidden="true"></i></h2>
+          <h5 class="center">Feedbacks welcomed</h5>
+
+          <p class="light">Good or bad, we're listening. Give us a call or send us an email.</p>
+        </div>
+      </div>
     </div>
+
   </div>
+</div>
 
-  <div id="index-banner" class="parallax-container">
-    <div class="section no-pad-bot">
-      <div class="container">
-        <br><br>
-        <h1 class="header center teal-text text-lighten-2">Parallax Template</h1>
-        <div class="row center">
-          <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
-        </div>
-        <div class="row center">
-          <a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">Get Started</a>
-        </div>
-        <br><br>
 
-      </div>
+<div class="container">
+  <h4>Latest Products</h4>
+  <div class="row center-align">
+    <%= paginate @items %>
+    <% @items.each do |item| %>
+    <% next if item.status == 'inactive'%>
+    <div class="col s12 m4 l4">
+      <h2 class="center"><%= image_tag item.image, class: "responsive-img" %></h2>
+      <h5 class="center"><%= link_to item.name, item_path(item) %></h5>
+      <p class="light"><%= item.description %></p>
+      <p class="light"><%= number_to_currency(item.price, unit: "RM ") %></p>
+      <p class="light"><%= link_to "<i class='fa fa-shopping-cart fa-2x' aria-hidden='true'> </i> &nbsp; Add To Cart".html_safe, add_item_path(id: item, quantity: 1), method: :post, class: 'waves-effect waves-light btn' %></p>
     </div>
-    <div class="parallax"><img src="http://materializecss.com/templates/parallax-template/background1.jpg" /></div>
-  </div>
-
-  <div class="parallax-container valign-wrapper">
-    <div class="section no-pad-bot">
-      <div class="container">
-        <div class="row center">
-          <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
-        </div>
-      </div>
+    <% end %>
+    <div class="col s12 m12 l12">
+      <%= paginate @items %>
     </div>
-    <div class="parallax"><img src="http://materializecss.com/templates/parallax-template/background2.jpg" alt="Unsplashed background img 2"></div>
-  </div>
-
-  <div class="container">
-    <div class="section">
-
-      <div class="row">
-        <div class="col s12 center">
-          <h3><i class="mdi-content-send brown-text"></i></h3>
-          <h4>Contact Us</h4>
-          <p class="left-align light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque id nunc nec volutpat. Etiam pellentesque tristique arcu, non consequat magna fermentum ac. Cras ut ultricies eros. Maecenas eros justo, ullamcorper a sapien id, viverra ultrices eros. Morbi sem neque, posuere et pretium eget, bibendum sollicitudin lacus. Aliquam eleifend sollicitudin diam, eu mattis nisl maximus sed. Nulla imperdiet semper molestie. Morbi massa odio, condimentum sed ipsum ac, gravida ultrices erat. Nullam eget dignissim mauris, non tristique erat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;</p>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-
-  <div class="parallax-container valign-wrapper">
-    <div class="section no-pad-bot">
-      <div class="container">
-        <div class="row center">
-          <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
-        </div>
-      </div>
-    </div>
-    <div class="parallax"><img src="http://materializecss.com/templates/parallax-template/background3.jpg" alt="Unsplashed background img 3"></div>
   </div>
 </div>
