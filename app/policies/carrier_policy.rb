@@ -1,4 +1,4 @@
-class AddressPolicy < ApplicationPolicy
+class CarrierPolicy < ApplicationPolicy
 
   def new?
     user.present? && user.admin?
