@@ -27,8 +27,11 @@ Rails.application.routes.draw do
   resources :items
   resources :categories
   resources :addresses
+  resources :carriers
 
   get :checkout, to: "addresses#address"
+  get :checkout2, to: "carriers#carrier"
+
   get :shippings, to: "shippings#index"
   get :order_confirmation, to: "shippings#order_confirmation"
   get :payments, to: "payments#index"

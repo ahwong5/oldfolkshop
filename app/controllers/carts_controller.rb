@@ -38,6 +38,7 @@ class CartsController < ApplicationController
       redirect_to cart_path
     else
       @cart[params[:id]] = params[:quantity]
+      redirect_to cart_path
     end
     flash[:success] = "Item has been added to shopping cart."
   end

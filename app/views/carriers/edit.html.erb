@@ -1,0 +1,28 @@
+<div class="container">
+  <%= form_for(@carrier) do |f| %>
+
+    <h1>
+      Edit Carrier
+    </h1>
+
+    <div>
+      <h4> <%= f.label :text_field, "Name" %> </h4>
+      <%= f.text_field :name %>
+    </div>
+
+    <div>
+      <h4> <%= f.label :text_field, "Destination" %> </h4>
+      <%= f.text_field :destination %>
+    </div>
+
+    <div>
+      <h4> <%= f.label :text_field, "Price" %> </h4>
+      <%= f.text_field :price %>
+    </div>
+
+    <div>
+      <%= f.submit "Save Carrier", class:"btn waves-effect waves-light" %>
+      <br><br>
+    </div>
+  <% end %>
+</div>

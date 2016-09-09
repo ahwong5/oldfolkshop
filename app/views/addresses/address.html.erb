@@ -1,7 +1,8 @@
 <div class="container">
-  <h1>Confirm your address</h1>
+  <h2>Confirm your address</h2>
 
-<%= form_tag order_confirmation_path, method: :get do %>
+  <%= form_tag order_confirmation_path, method: :get do %>
+
   <% @addresses.each do |address| %>
   <%= radio_button_tag 'address', address.id, true %>
   <%= label_tag "address_#{address.id}", "Address" %>
@@ -15,10 +16,22 @@
   <td><%= address.country %></td><br>
   <br>
   <% end %>
-<%= submit_tag 'Next Final', class:"btn waves-effect waves-light" %>
+
+  <h2>Confirm your Delivery Method</h2>
+
+  <% @carriers.each do |carrier| %>
+  <%= radio_button_tag 'carrier', carrier.id, true %>
+  <%= label_tag "carrier_#{carrier.id}", "Carrier" %>
+  <td><%= carrier.name %></td><br>
+  <td><%= carrier.destination %></td><br>
+  <td><%= carrier.price %></td><br>
+  <br>
+  <% end %>
+
+  <a href="/cart" class="btn waves-effect waves-light">Back</a>
+
+  <%= submit_tag 'Next Final', class:"btn waves-effect waves-light" %>
   <% end %>
   <br>
-  <a href="/cart" class="btn waves-effect waves-light">Back</a>
-  <a href="/shippings" class="btn waves-effect waves-light">Next</a>
-  <br><br>
+
 </div>

@@ -1,0 +1,29 @@
+<div class="container">
+<h1>Carriers</h1>
+
+<%= link_to "Add New Carrier", new_carrier_path, class: "btn waves-effect waves-light" %>
+<br><br>
+<table>
+  <thead>
+    <th>Name</th>
+    <th>Destination</th>
+    <th>Price</th>
+    <th></th>
+  </thead>
+  <tbody>
+    <% @carriers.each do |carrier| %>
+
+      <tr>
+        <td><%= carrier.name %></td>
+        <td><%= carrier.destination %></td>
+        <td><%= number_to_currency(carrier.price, :unit => 'RM') %></td>
+        <td><%= link_to "Edit Carrier", edit_carrier_path(carrier), class: "btn waves-effect waves-light" %>
+</td>
+
+      </tr>
+
+    <% end %>
+    </tbody>
+</table>
+
+</div>
