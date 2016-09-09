@@ -5,6 +5,8 @@ class ShippingsController < ApplicationController
   end
 
   def order_confirmation
+    @carrier =  Carrier.find_by(id: params[:carrier])
+
     @address = current_user.addresses.find_by(id: params[:address])
 
     @totalprice = 0

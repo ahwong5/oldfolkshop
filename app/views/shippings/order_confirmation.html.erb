@@ -1,8 +1,7 @@
 <p id="notice"><%= notice %></p>
 <div class="container">
-  <h1>Order Summary</h1>
+  <h2>Order Summary</h2>
 
-  <br><br>
   <h4>Your Shipping Info</h4>
 
   <td><%= @address.name %></td><br>
@@ -16,23 +15,12 @@
   <br>
 
   <div>
-    <h4>Your Payment Info</h4>
-    <table>
-      <thead>
-        <tr>
-          <th>Payment Provider</th>
-          <th>Available Payment Methods</th>
-          <th>Estimated Delivery</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Bill Plz</td>
-          <td>Credit Card or Internet Banking</td>
-          <td>1 to 2 days</td>
-        </tr>
-      </tbody>
-    </table>
+    <h4>Your Delivery Method</h4>
+    <td><%= @carrier.name %></td><br>
+    <td><%= @carrier.destination %></td><br>
+    <td><%= @carrier.price %></td><br>
+    <br>
+
 
     <h4>Your Order Items</h4>
 
