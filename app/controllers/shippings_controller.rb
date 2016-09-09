@@ -2,6 +2,7 @@ class ShippingsController < ApplicationController
   before_action :authenticate_user!
 
   def index
+    
   end
 
   def order_confirmation
@@ -22,7 +23,8 @@ class ShippingsController < ApplicationController
 
       @totalprice += item.price.to_f * item.quantity.to_i
     end
-
+    @carrier.price.to_i
+      @totalprice = @totalprice + @carrier.price.to_i
   end
 
 end
