@@ -3,9 +3,11 @@ function modalFunctions() {
     opacity: .7
   });
   $(".button-collapse").sideNav();
-  // Materialize.toast($toastContent, 5000, $toastClass);
   $('.cart').material_chip();
   $('.dropdown-button').dropdown();
 }
 
 $(document).on('turbolinks:load', modalFunctions)
+$(document).ready(function(){
+  Materialize.toast($toastContent, 5000, $toastClass);
+});
